@@ -35,6 +35,14 @@ class BillController extends Controller
     public function store(Request $request)
     {
         //
+        $bills = DB::table('bills')->where('user_id', Auth::id())->get();
+        $properties = DB::table('properties')->get();
+        $reports = DB::table('reports')->get();
+        /* dd($properties); */
+
+        $title = 'Listado Facturas';
+
+        $status = $request['status'];
     }
 
     /**
