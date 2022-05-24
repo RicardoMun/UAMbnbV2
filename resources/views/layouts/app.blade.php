@@ -73,10 +73,17 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
+
+
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('home') }}">
                                         <i class="fa-solid fa-user"></i>
                                         {{ __(' Perfil') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="/users">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        {{ __(' Administrar perfiles') }}
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
