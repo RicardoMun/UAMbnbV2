@@ -5,7 +5,7 @@
 <div class="container">
 
     <div class="alert alert-warning" role="alert">
-        No tienes autorización para hacer esto :(
+        No tienes autorización para hacer esto
     </div>
 </div>
 
