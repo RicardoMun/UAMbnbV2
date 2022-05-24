@@ -19,7 +19,7 @@
                 <p class="card-text">Metros: {{ $house->area }}m2</p>
                 <p class="card-text">Caracteristicas: {{ $house->characteristics }}</p>
                 {{-- <p class="card-subtitle mb-2 text-muted">Publicado hace: {{ $house->created_at->diffForHumans() }}</p> --}}
-                <a class="btn btn-primary" href="#" role="button">Reservar</a>
+                <a class="btn btn-primary" href="{{ route('bills.index') }}" role="button">Reservar</a>
 
             </div>
         </div>

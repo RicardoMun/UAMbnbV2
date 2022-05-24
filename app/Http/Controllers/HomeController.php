@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -26,10 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $properties = Property::where('user_id', Auth::id())
+        $properties = property::where('user_id', Auth::id())
                 ->orderBy('created_at', 'desc')
                 ->simplePaginate(10);
 
-        return view('home', ['inmuebles' => $properties]);
+        return view('home', ['properties' => $properties]);
     }
+
 }

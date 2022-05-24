@@ -58,18 +58,11 @@
                             @guest {{-- Si está autenticado --}}
 
                             @else
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Opciones
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                       {{--  <li><a class="dropdown-item" href="/apartamentos/{{ Auth::id() }}"> Ver inmuebles</a></li> --}}
-                                        {{-- <li><a class="dropdown-item" href="/inmuebles/{{ Auth::id() }}"> a</a></li> --}}
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
 
-                                </li>
+                                <li><a class="dropdown-item" href="/properties"> Ver inmuebles</a></li>
+                                <li><a class="dropdown-item" href="/home"> Ver mis inmuebles</a></li>
+                                <li><a class="dropdown-item" href="/properties/create">Crear inmueble</a></li>
+
                             @endguest
 
 
@@ -189,16 +182,16 @@
                         <div class="card-body">
                           <h5 class="card-title">¿Buscas hospedaje?</h5>
                           <p class="card-text">Mira el mejor apartamento para ti aquí</p>
-                          {{-- <a href="{{ route('inmueble') }}" class="btn btn-primary">Ver apartamentos</a> --}}
+                          <a href="/properties" class="btn btn-primary">Ver apartamentos</a>
                         </div>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Ser Host</h5>
+                          <h5 class="card-title">Arrendienda tu choza</h5>
                           <p class="card-text">Registrate aquí y empiza a generar ingresos con tus inmuebles.</p>
-                         {{--  <a href="{{ route('register') }}" class="btn btn-primary">Ser host</a> --}}
+                          <a href="/properties/create" class="btn btn-primary">Arrendar</a>
                         </div>
                       </div>
                     </div>

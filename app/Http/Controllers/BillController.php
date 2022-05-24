@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class BillController extends Controller
 {
@@ -35,6 +37,14 @@ class BillController extends Controller
     public function store(Request $request)
     {
         //
+        $bills = DB::table('bills')->where('user_id', Auth::id())->get();
+        $properties = DB::table('properties')->get();
+        $reports = DB::table('reports')->get();
+        /* dd($properties); */
+
+        $title = 'Listado Facturas';
+
+        $status = $request['status'];
     }
 
     /**
