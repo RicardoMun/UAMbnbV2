@@ -13,7 +13,7 @@
                 <p class="card-text">Caracteristicas: {{ $property->description }}</p>
                 <p class="card-text">Arrendatario: {{ $property->user_id }}</p>
                 {{-- <p class="card-subtitle mb-2 text-muted">Publicado hace: {{ $property->created_at->diffForHumans() }}</p> --}}
-                <a class="btn btn-primary" href="#" role="button">Reservar</a>
+                <a class="btn btn-primary" href="{{ route('bills.index') }}" role="button">Reservar</a>
 
             </div>
         </div>
