@@ -65,7 +65,7 @@
                                         {{ __(' Perfil') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('properties.create') }}">
+                                    <a class="dropdown-item" href="{{ route('houses.create') }}">
                                         <i class="fa-solid fa-plus"></i>
                                         {{ __(' Crear inmueble') }}
                                     </a>

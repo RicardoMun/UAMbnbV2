@@ -27,8 +27,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
     Route::resource('users', App\Http\Controllers\UserController::class)->except(['index']);
 
-    Route::get('/properties', [App\Http\Controllers\PropertyController::class, 'index'])->name('properties.index');
-    Route::resource('properties', App\Http\Controllers\PropertyController::class)->except(['index']);
+    Route::get('/houses', [App\Http\Controllers\HouseController::class, 'index'])->name('houses.index');
+    Route::resource('houses', App\Http\Controllers\HouseController::class)->except(['index']);
 
     Route::get('/bills', [App\Http\Controllers\BillController::class, 'index'])->name('bills.index');
     Route::resource('bills', App\Http\Controllers\BillController::class)->except(['index']);

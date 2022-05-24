@@ -14,7 +14,7 @@
 
     {!! Form::open(['route' => 'houses.store', 'method' => 'post']) !!}
 
-    @include('houses.subview-fields-inmuebles')
+    @include('houses.subview-fields-houses')
 
     <button onclick="publicar()" type="submit" class="btn btn-primary">Crear inmueble</button>
 

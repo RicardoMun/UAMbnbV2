@@ -26,6 +26,9 @@ class Property extends Model
     public function dislikes(){
         return $this->hasMany(Dislike::class);
     }
+    public function opinion(){
+        return $this->hasMany(Opinion::class);
+    }
 
     public function comments(){
         return $this->hasMany(Comment::class);

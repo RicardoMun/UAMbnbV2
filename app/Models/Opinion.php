@@ -15,10 +15,8 @@ class Opinion extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    public function arrendamiento(){
-        return $this->hasMany(arrendamiento::class);
-    }
+
     public function property(){
-        return $this->belongsTo(PropertyController::class);
+        return $this->belongsTo(House::class);
     }
 }

@@ -30,7 +30,7 @@ class HouseRequest extends FormRequest
         'characteristics'=>'required | string | min:1',
         'location'=>'required | string | min:1 | max:40',
         'area'=>'required | numeric | min:1',
-        'photos'=>'required | string',
+        'photos'=>' | string',
         'price'=>'required | numeric | min:1'
         ];
     }

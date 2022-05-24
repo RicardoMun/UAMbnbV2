@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Opinion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OpinionController extends Controller
 {
@@ -14,7 +16,9 @@ class OpinionController extends Controller
      */
     public function index()
     {
-        
+        $opiniones = DB:: table('opinions')->where('user_id',Auth::id());
+
+        return view('comments.index');
     }
 
     /**
@@ -22,9 +26,10 @@ class OpinionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $property_id=$request['property_id'];
+        return view('comments.create');
     }
 
     /**
@@ -44,9 +49,10 @@ class OpinionController extends Controller
      * @param  \App\Models\Opinion  $opinion
      * @return \Illuminate\Http\Response
      */
-    public function show(Opinion $opinion)
+    public function show($id)
     {
-        //
+        $opiniones =Opinion::find($id);
+        return view('opiniones.show');
     }
 
     /**
@@ -55,9 +61,10 @@ class OpinionController extends Controller
      * @param  \App\Models\Opinion  $opinion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Opinion $opinion)
+    public function edit(Request $request)
     {
-        //
+        $property_id = $request['property_id'];
+        return view('opiniones.edit');
     }
 
     /**
@@ -69,7 +76,8 @@ class OpinionController extends Controller
      */
     public function update(Request $request, Opinion $opinion)
     {
-        //
+        $opinion->fill($request->input());
+        $opinion->save();
     }
 
     /**
@@ -80,6 +88,6 @@ class OpinionController extends Controller
      */
     public function destroy(Opinion $opinion)
     {
-        //
+        $opinion ->delete();
     }
 }
