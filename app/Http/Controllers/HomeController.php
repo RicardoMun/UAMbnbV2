@@ -29,7 +29,7 @@ class HomeController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->simplePaginate(10);
 
-        return view('welcome', ['properties' => $properties]);
+        return view('home', ['properties' => $properties]);
     }
 
 }
