@@ -35,6 +35,7 @@ class PropertyStoreRequest extends FormRequest
             'area' => 'required | min:1 | numeric',
             'capacity' => 'required | numeric | min:1',
             'dailyRent' => 'required | numeric | min:1',
+            'image'=>'required | string',
             'address' => 'required | string | min: 1',
             'city' => 'required | string | min:3'
         ];

@@ -18,6 +18,7 @@ class PropertySeeder extends Seeder
         $property->name = 'Catamarán';
         $property->city = 'Cartagena';
         $property->address = 'carrera 98 #12-34';
+        $property->image = 'public/images/casaCampo.jpg';
         $property->description = 'Apartamento 1001 en Cartagena';
         $property->area = 43;
         $property->capacity = 5;
@@ -28,6 +29,7 @@ class PropertySeeder extends Seeder
         $property = new Property;
         $property->name = 'Plantón';
         $property->city = 'Cali';
+        $property->image = 'public/images/salaBonita.jpg';
         $property->description = 'Penthouse en La Cali';
         $property->area = 43;
         $property->capacity = 5;
@@ -39,6 +41,7 @@ class PropertySeeder extends Seeder
         $property = new Property;
         $property->name = 'Cacaracho';
         $property->city = 'Cartagena';
+        $property->image = 'public/images/casaLujo.jpg';
         $property->description = 'Penthouse en La Cartagena';
         $property->area = 43;
         $property->capacity = 5;
@@ -50,6 +53,7 @@ class PropertySeeder extends Seeder
         $property = new Property;
         $property->name = 'Pancho';
         $property->city = 'Bogotá';
+        $property->image = 'public/images/salaComoda.jpg';
         $property->description = 'Penthouse en Bogotá';
         $property->area = 43;
         $property->capacity = 5;

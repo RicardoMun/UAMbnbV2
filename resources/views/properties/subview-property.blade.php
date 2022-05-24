@@ -1,9 +1,9 @@
 <div class="card text-white bg-dark mb-3" >
     <div class="card-body d-flex justify-content-between">
 
-        {{-- <div class="col-md-4">
+        <div class="col-md-4">
             <img src="{{ $property->image }}" class="img-fluid rounded-start">
-        </div> --}}
+        </div>
         <div class="col-md-8">
             <div class="card-body">
                 <h4 class="card-title">{{ $property->name }}</h4>

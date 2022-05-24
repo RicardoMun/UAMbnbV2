@@ -61,6 +61,7 @@
 
                                 <li><a class="dropdown-item" href="/properties"> Ver inmuebles</a></li>
                                 <li><a class="dropdown-item" href="/home"> Ver mis inmuebles</a></li>
+                                <li><a class="dropdown-item" href="/bills"> Reservas</a></li>
                                 <li><a class="dropdown-item" href="/properties/create">Crear inmueble</a></li>
 
                             @endguest

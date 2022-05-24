@@ -18,8 +18,9 @@
     <br><br>
 
         <button type="submit" class="btn btn-primary">Crear inmueble</button>
-  
-    <br><br><br><br><br>
+
+    <br><br>
+    <br><br>
 
     {!! Form::close() !!}
 

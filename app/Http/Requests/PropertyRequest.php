@@ -30,6 +30,7 @@ class PropertyRequest extends FormRequest
             'capacity' => 'required | numeric | min:1',
             'dailyRent' => 'required | numeric | min:1',
             'address' => 'required | string | min: 1',
+            'image'=>'required | string',
             'city' => 'required | string | min:3'
         ];
     }

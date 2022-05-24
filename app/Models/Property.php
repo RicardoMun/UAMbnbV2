@@ -14,6 +14,7 @@ class Property extends Model
         'description',
         'area',
         'capacity',
+        'image',
         'dailyRent',
         'address',
         'city'

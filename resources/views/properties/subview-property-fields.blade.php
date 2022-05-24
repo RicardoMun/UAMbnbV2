@@ -39,8 +39,10 @@
                     <label for="city">Ciudad</label>
                 </div>
 
-                <label for="imagenes" class="form-label">Imágenes:</label>
-                {!! Form::file('imagenes[]', ['class' => 'form-control', 'id' => 'input-file-now--custom-3', 'multiple', 'accept' => 'image/*']) !!}
+                <div class="form-floating mb-3">
+                    {!! Form::file('image', null, ['class'=>"form-control", 'enctype'=> "multipart/form-data", 'rows'=>1]) !!}
+                    <label for="image"></label>
+                </div>
 
             </div>
         </div>

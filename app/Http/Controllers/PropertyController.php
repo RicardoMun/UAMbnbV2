@@ -43,12 +43,12 @@ class PropertyController extends Controller
     {
         $property = new Property();
 
-        if( $request->hasFile('fotos')){
-            $file = $request->file('fotos');
+        if( $request->hasFile('image')){
+            $file = $request->file('image');
             $fileName = time() . '-' . $file->getClientOriginalName();
-            $filePath = 'images/';
-            $fileAccepted = $request->file('fotos')->move($filePath, $fileName);
-            $property->fotos = $filePath . $fileName;
+            $filePath = '/public/images';
+            $fileAccepted = $request->file('image')->move($filePath, $fileName);
+            $property->image = $filePath . $fileName;
         }
 
         $property->fill($request->input());

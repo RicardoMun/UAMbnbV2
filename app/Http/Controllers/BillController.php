@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\BillRequest;
+use App\Models\Bill;
 
 
 class BillController extends Controller
@@ -14,9 +16,18 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $bills = DB::table('bills')->where('user_id', Auth::id())->get();
+        $properties = DB::table('properties')->get();
+
+        $status = $request['status'];
+
+        if ($status) {
+            $bills = DB::table('bills')->where('user_id', Auth::id())->where('status', $status)->get();
+
+        }
+
     }
 
     /**
@@ -37,15 +48,18 @@ class BillController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $bills = DB::table('bills')->where('user_id', Auth::id())->get();
-        $properties = DB::table('properties')->get();
-        $reports = DB::table('reports')->get();
-        /* dd($properties); */
 
-        $title = 'Listado Facturas';
+        if($request['status']){
+            $bill = new Bill();
+            $bill->user_id = Auth::id();
+            $bill->status = $request['status'];
+            $bill->finishDate = $request['finishDate'];
+            $bill->startDate = $request['startDate'];
+            $bill->total = $request['total'];
+            $bill->save();
 
-        $status = $request['status'];
+            return redirect(url('bills'));
+        }
     }
 
     /**
@@ -65,9 +79,9 @@ class BillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bill $bill)
     {
-        //
+        return view('bills.edit', compact('bill'));
     }
 
     /**
@@ -88,8 +102,9 @@ class BillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bill $bill)
     {
-        //
+        $bill->delete();
+        return view('home');
     }
 }
