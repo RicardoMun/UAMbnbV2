@@ -22,10 +22,10 @@
                                 <div class=" justify-content-around">
                                     @foreach($properties as $property)
                                         <div class="card mb-3 justify-content-around">
-                                            <img src="{{ $property->fotos }}" class="card-img-top img-fluid" width="120px">
+                                            <img src="{{ $property->images }}" class="card-img-top img-fluid" width="120px">
                                             <div class="card-body">
-                                            <h5 class="card-title">{{ $property->nombre }}</h5>
-                                            <p class="card-text">{{ $property->descripcion }}</p>
+                                            <h5 class="card-title">{{ $property->name }}</h5>
+                                            <p class="card-text">{{ $property->description }}</p>
                                             <p class="card-text"><small class="text-muted">{{ $property->created_at->diffForHumans() }}</small></p>
                                             <button type="button" class="btn btn-primary">Reservar
 

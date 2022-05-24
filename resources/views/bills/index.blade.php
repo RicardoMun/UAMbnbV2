@@ -37,12 +37,6 @@
                         <ul class="list-group list-group-flush">
                             @forelse($bills as $bill)
                                 @include('bills.subview-bill')
-                                {{-- <a href="{{ url('/properties/' . $property->id) }}">
-                                    <li class="list-group-item">
-                                        <i class="fa-solid fa-circle-property"></i> {{ $property->name }}
-                                    </li>
-                                </a> --}}
-                                {{-- <a href="{{ url('/properties/'.$property->id) }}">Ver detalles</a> --}}
                             @empty
                                 <li class="list-group-item">No hay facturas registradas.</li>
                             @endforelse

@@ -42,8 +42,6 @@
                 <label for="imagenes" class="form-label">Imágenes:</label>
                 {!! Form::file('imagenes[]', ['class' => 'form-control', 'id' => 'input-file-now--custom-3', 'multiple', 'accept' => 'image/*']) !!}
 
-
-
             </div>
         </div>
     </div>

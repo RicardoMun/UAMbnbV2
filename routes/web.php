@@ -46,6 +46,3 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('dislikes', App\Http\Controllers\DislikeController::class)->except(['index']);
 
 });
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
