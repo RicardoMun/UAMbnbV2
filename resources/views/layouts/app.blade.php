@@ -79,11 +79,6 @@
                                         {{ __(' Perfil') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('houses.create') }}">
-                                        <i class="fa-solid fa-plus"></i>
-                                        {{ __(' Crear inmueble') }}
-                                    </a>
-
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

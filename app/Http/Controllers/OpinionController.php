@@ -16,9 +16,9 @@ class OpinionController extends Controller
      */
     public function index()
     {
-        $opiniones = DB:: table('opinions')->where('user_id',Auth::id());
+       /*  $opiniones = DB:: table('opinions')->where('user_id',Auth::id());
 
-        return view('comments.index');
+        return view('comments.index'); */
     }
 
     /**
@@ -28,8 +28,8 @@ class OpinionController extends Controller
      */
     public function create(Request $request)
     {
-        $property_id=$request['property_id'];
-        return view('comments.create');
+        /* $property_id=$request['property_id'];
+        return view('comments.create'); */
     }
 
     /**
@@ -51,8 +51,8 @@ class OpinionController extends Controller
      */
     public function show($id)
     {
-        $opiniones =Opinion::find($id);
-        return view('opiniones.show');
+        /* $opiniones =Opinion::find($id);
+        return view('opiniones.show'); */
     }
 
     /**
@@ -63,8 +63,8 @@ class OpinionController extends Controller
      */
     public function edit(Request $request)
     {
-        $property_id = $request['property_id'];
-        return view('opiniones.edit');
+        /* $property_id = $request['property_id'];
+        return view('opiniones.edit'); */
     }
 
     /**
@@ -76,8 +76,8 @@ class OpinionController extends Controller
      */
     public function update(Request $request, Opinion $opinion)
     {
-        $opinion->fill($request->input());
-        $opinion->save();
+        /* $opinion->fill($request->input());
+        $opinion->save(); */
     }
 
     /**
@@ -88,6 +88,6 @@ class OpinionController extends Controller
      */
     public function destroy(Opinion $opinion)
     {
-        $opinion ->delete();
+        /* $opinion ->delete(); */
     }
 }

@@ -17,9 +17,9 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = DB::table('houses')->get();
+        /* $houses = DB::table('houses')->get();
 
-        return view('houses.index',compact('houses'));
+        return view('houses.index',compact('houses')); */
     }
 
     /**
@@ -29,7 +29,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        return view('houses.create');
+        /* return view('houses.create'); */
     }
 
     /**
@@ -40,7 +40,7 @@ class HouseController extends Controller
      */
     public function store(HouseRequest $request)
     {
-        $house= new House();
+        /* $house= new House();
         if( $request->hasFile('fotos')){
             $file = $request->file('fotos');
             $nombreArchivo = time() . '-' . $file->getClientOriginalName();
@@ -53,7 +53,7 @@ class HouseController extends Controller
         $house->user_id = Auth::id();
         $house->save();
 
-        return redirect(route('home')) -> with (['status'=> 'EL INMUEBLE SE HA CREADO CON EXITO']);
+        return redirect(route('home')) -> with (['status'=> 'EL INMUEBLE SE HA CREADO CON EXITO']); */
     }
 
     /**
@@ -75,7 +75,7 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
-        return view('inmuebles.edit',compact('inmueble'))-> with (['status'=> 'EL INMUEBLE SE HA EDITADO CON EXITO']);
+        /* return view('inmuebles.edit',compact('inmueble'))-> with (['status'=> 'EL INMUEBLE SE HA EDITADO CON EXITO']); */
     }
 
     /**
@@ -87,7 +87,7 @@ class HouseController extends Controller
      */
     public function update(HouseRequest $request, House $house)
     {
-        if ($house->user_id == Auth::id()) {
+        /* if ($house->user_id == Auth::id()) {
             $house->fill($request->input());
             $house->save();
             //actualizamos
@@ -95,7 +95,7 @@ class HouseController extends Controller
 
         }else{
             return view('layouts.validation');
-        }
+        } */
     }
 
     /**
@@ -106,13 +106,13 @@ class HouseController extends Controller
      */
     public function destroy(House $house)
     {
-        if($house->user_id == Auth::id()){
+        /* if($house->user_id == Auth::id()){
             $house->delete();
             return redirect(route('inmuebles', $house->user_id))->with('status',"El inmueble se elimino correctamente");
         }else{
 
             return view('layouts.validation');
 
-        }
+        } */
     }
 }

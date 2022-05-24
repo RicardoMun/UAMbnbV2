@@ -1,13 +1,7 @@
-<div class="card text-white bg-dark mb-3" >
+{{-- <div class="card text-white bg-dark mb-3" >
     <div class="card-body d-flex justify-content-between">
 
-        {{-- <div>
-            <h5 class="card-title">{{ $house->nombre }}</h5>
-            <p class="card-text">Valor: ${{ $house->valor }}</p>
-            <p class="card-text">Metros: {{ $house->area }}m2</p>
-            <p class="card-text">Caracteristicas: {{ $house->caracteristicas }}</p>
-            <p class="card-subtitle mb-2 text-muted">Publicado hace: {{ $house->created_at->diffForHumans() }}</p>
-        </div> --}}
+
 
         <div class="col-md-4">
             <img src="{{ $house->photo }}" class="img-fluid rounded-start">
@@ -18,7 +12,7 @@
                 <p class="card-text">Valor: ${{ $->price }}</p>
                 <p class="card-text">Metros: {{ $house->area }}m2</p>
                 <p class="card-text">Caracteristicas: {{ $house->characteristics }}</p>
-                {{-- <p class="card-subtitle mb-2 text-muted">Publicado hace: {{ $house->created_at->diffForHumans() }}</p> --}}
+
                 <a class="btn btn-primary" href="{{ route('bills.index') }}" role="button">Reservar</a>
 
             </div>
@@ -44,3 +38,4 @@
 
     </div>
 </div>
+ --}}

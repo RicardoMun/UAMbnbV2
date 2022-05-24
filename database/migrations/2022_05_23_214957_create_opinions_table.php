@@ -17,11 +17,11 @@ class CreateOpinionsTable extends Migration
         Schema::create('opinions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('user_id')->references('id')->on('users');
+           /*  $table->foreignId('user_id')->references('id')->on('users');
             $table->boolean('likes');
             $table->boolean('dislikes');
             $table->text('content');
-            $table->foreignId('property_id')->references('id')->on('houses');
+            $table->foreignId('property_id')->references('id')->on('houses'); */
 
         });
     }

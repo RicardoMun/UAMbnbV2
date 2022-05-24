@@ -23,7 +23,7 @@ class HouseRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+       /*  return [
         'name'=>'required | string | min:1 | max:35',
         'description'=>'required | string | min:1 | max:150',
         'maximun_capacity'=>'required | string | min:1',
@@ -32,6 +32,6 @@ class HouseRequest extends FormRequest
         'area'=>'required | numeric | min:1',
         'photos'=>' | string',
         'price'=>'required | numeric | min:1'
-        ];
+        ]; */
     }
 }
