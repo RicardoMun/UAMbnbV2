@@ -75,9 +75,9 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Property $property)
     {
-        //
+        return view('properties.edit', compact('property')) -> with (['status'=> 'EL INMUEBLE SE HA EDITADO CON EXITO']);
     }
 
     /**
@@ -87,9 +87,16 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PropertyRequest $request, Property $property)
     {
-        //
+        if ($property->user_id == Auth::id()) {
+            $property->fill($request->input());
+            $property->save();
+            //actualizamos
+            return redirect(route('properties.index', $property->user_id)); //route redirecciona por el nombre de la ruta
+        }else{
+            return view('layouts.validation');
+        }
     }
 
     /**
@@ -98,8 +105,15 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Property $property)
     {
-        //
+        if($property->user_id == Auth::id()){
+            $property->delete();
+            return redirect(route('properties.index', $property->user_id))->with('status',"El inmueble se elimino correctamente");
+        }else{
+
+            return view('layouts.validation');
+
+        }
     }
 }

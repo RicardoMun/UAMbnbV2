@@ -5,15 +5,15 @@
 
 <div class="container">
 
-    <h1>Estos son todos los inmuebles disponibles: </h1>
+    <h1>Estos son todos tus Inmuebles: </h1>
 
-    @forelse($properties as $property)
+@forelse($houses as $house)
 
-    @include('properties.subview-property')
+    @include('houses.subview-house')
 
     @empty
         <div class="alert alert-info" role="alert">
-            No se han agregado inmuebles
+            El usuario no ha agregado Inmuebles
         </div>
     @endforelse
 

@@ -2,17 +2,16 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\PropertyController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Opinion extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
+    protected $fillable =[
         'content',
     ];
-
     public function user(){
         return $this->belongsTo(User::class);
     }

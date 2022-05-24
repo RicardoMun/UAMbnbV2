@@ -35,6 +35,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+
+                        </li>
+
+                        @guest {{-- Si está autenticado --}}
+
+                        @else
+
+                            <li><a class="dropdown-item" href="/properties"> Ver inmuebles</a></li>
+                            <li><a class="dropdown-item" href="/home"> Ver mis inmuebles</a></li>
+                            <li><a class="dropdown-item" href="/properties/create">Crear inmueble</a></li>
+
+                        @endguest
+
 
                     </ul>
 
@@ -65,7 +79,7 @@
                                         {{ __(' Perfil') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('properties.create') }}">
+                                    <a class="dropdown-item" href="{{ route('houses.create') }}">
                                         <i class="fa-solid fa-plus"></i>
                                         {{ __(' Crear inmueble') }}
                                     </a>

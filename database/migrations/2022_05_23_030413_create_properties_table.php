@@ -22,9 +22,9 @@ class CreatePropertiesTable extends Migration
             $table->float('dailyRent');
             $table->integer('area');
             $table->integer('capacity');
-
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('no action');
             $table->timestamps();
+           $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('no action');
+
         });
     }
 

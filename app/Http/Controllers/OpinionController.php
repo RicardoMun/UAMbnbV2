@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Opinion;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
-class BillController extends Controller
+class OpinionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,9 @@ class BillController extends Controller
      */
     public function index()
     {
-        //
+        $opiniones = DB:: table('opinions')->where('user_id',Auth::id());
+
+        return view('comments.index');
     }
 
     /**
@@ -23,9 +26,10 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $property_id=$request['property_id'];
+        return view('comments.create');
     }
 
     /**
@@ -37,58 +41,53 @@ class BillController extends Controller
     public function store(Request $request)
     {
         //
-        $bills = DB::table('bills')->where('user_id', Auth::id())->get();
-        $properties = DB::table('properties')->get();
-        $reports = DB::table('reports')->get();
-        /* dd($properties); */
-
-        $title = 'Listado Facturas';
-
-        $status = $request['status'];
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Opinion  $opinion
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $opiniones =Opinion::find($id);
+        return view('opiniones.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Opinion  $opinion
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $property_id = $request['property_id'];
+        return view('opiniones.edit');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Opinion  $opinion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Opinion $opinion)
     {
-        //
+        $opinion->fill($request->input());
+        $opinion->save();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Opinion  $opinion
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Opinion $opinion)
     {
-        //
+        $opinion ->delete();
     }
 }
