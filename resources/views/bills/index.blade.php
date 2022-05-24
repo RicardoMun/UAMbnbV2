@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card border-dark">
                     <div class="card-header text-center text-light" style="background-color: #212529;">
-                        <h1>{{ $title }}</h1>
+                        <h1>title</h1>
                     </div>
                     <div class="card mb-2">
                         <div class="card-body">

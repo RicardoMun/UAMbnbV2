@@ -27,7 +27,7 @@ class BillController extends Controller
             $bills = DB::table('bills')->where('user_id', Auth::id())->where('status', $status)->get();
 
         }
-
+        return view('bills.index', compact( 'bills', 'properties'));
     }
 
     /**

@@ -21,12 +21,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light" style="background-color: #af1818;">
-            <div class="container" >
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/images/UAMbnbLogo.png"
-                    style="width:40px; border-radious:50%;" />
-                    <b style="color: white">UAMbnb</b>
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,36 +33,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-
-                        </li>
-
-                        @guest {{-- Si está autenticado --}}
-
-                        @else
-
-                            <li><a class="dropdown-item" href="/properties"> Ver inmuebles</a></li>
-                            <li><a class="dropdown-item" href="/home"> Ver mis inmuebles</a></li>
-                            <li><a class="dropdown-item" href="/properties/create">Crear inmueble</a></li>
-
-                        @endguest
-
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto" >
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -73,24 +57,11 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
-
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('home') }}">
-                                        <i class="fa-solid fa-user"></i>
-                                        {{ __(' Perfil') }}
-                                    </a>
-
-                                    <a class="dropdown-item" href="/users">
-                                        <i class="fa-solid fa-circle-user"></i>
-                                        {{ __(' Administrar perfiles') }}
-                                    </a>
-
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        <i class="fa-solid fa-door-open"></i>
-                                        {{ __(' Cerrar sesión') }}
+                                        {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -108,6 +79,5 @@
             @yield('content')
         </main>
     </div>
-    @include('layouts.subview-footer')
 </body>
 </html>
