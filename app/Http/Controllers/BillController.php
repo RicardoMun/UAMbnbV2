@@ -16,17 +16,11 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         $bills = DB::table('bills')->where('user_id', Auth::id())->get();
         $properties = DB::table('properties')->get();
 
-        $status = $request['status'];
-
-        if ($status) {
-            $bills = DB::table('bills')->where('user_id', Auth::id())->where('status', $status)->get();
-
-        }
         return view('bills.index', compact( 'bills', 'properties'));
     }
 
@@ -70,7 +64,9 @@ class BillController extends Controller
      */
     public function show($id)
     {
-        //
+        $bill = Bill::find($id);
+
+        return view('bills.show', compact('bill'));
     }
 
     /**
@@ -91,9 +87,12 @@ class BillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BillRequest $request, Bill $bill)
     {
-        //
+        $bill->status = $request['status'];
+        $bill->save();
+
+        return redirect(url('bills'));
     }
 
     /**

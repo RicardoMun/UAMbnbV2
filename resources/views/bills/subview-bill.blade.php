@@ -5,7 +5,7 @@
                 <a href="{{ url('/bills'.$bill->id) }}" class="link-dark">
                     <h5 class="card-title">
                         <i class="fa-solid fa-clipboard"></i>
-                        <b>Tu factura</b>
+                        <b>Factura</b>
                     </h5>
                 </a>
                     @foreach ($properties as $property)
@@ -18,7 +18,7 @@
             @auth
                 <div class="d-flex justify-content-between">
                     @if (Auth::user()->role == 'Admin' || Auth::id() == $bill->user_id)
-                    
+
                         @if ($bill->status == 'Pendiente')
                             <div class="" style=''>
                                 <a href="{{ route('bills.edit', $bill->id) }}" class="btn btn-success btn-sm"></a>

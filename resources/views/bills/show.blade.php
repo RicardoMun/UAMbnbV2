@@ -5,11 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-dark">
-                <div class="card mb-3">
-                    <div class="card-header text-center text-light" style="background-color: #212529;">
-                        <h1><i class="fa-regular fa-address-card"></i> Factura #{{ $bill->user_id }}</h1>
-                    </div>
-                </div>
+                
                 @include('layouts.subview-form-errors')
                 <div class="d-flex justify-content-center">
                     <div class="card mb-3">
@@ -22,10 +18,10 @@
                                             <b>Información de la Factura</b>
                                         </h5>
                                     </a>
-                                    <h6><b>Fecha Inicial: </b>{{ $bill->start_date }}</h6>
-                                    <h6><b>Fecha Final: </b>{{ $bill->final_date }}</h6>
-                                    <h6><b>Precio Total: </b>{{ $bill->total_price }}</h6>
-                                    <h6><b>Estado: </b>{{ $bill->status }}</h6>
+                                    <h6><b>Fecha inicial </b>{{ $bill->startDate }}</h6>
+                                    <h6><b>Fecha final </b>{{ $bill->finishDate }}</h6>
+                                    <h6><b>Total </b>{{ $bill->total }}</h6>
+                                    <h6><b>Estado </b>{{ $bill->status }}</h6>
                                 </div>
                                 @auth
                                 <div class="d-flex justify-content-between">
@@ -47,7 +43,7 @@
                                             {!! Form::close() !!}
                                         </div>
                                     @endif
-                                    {{-- <a href="http://www.google.com" onclick="return confirm('¿Está seguro?');">Google</a> --}}
+
                                 </div>
                                 @endauth
                             </div>
