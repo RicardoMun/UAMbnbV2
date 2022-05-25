@@ -22,7 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/v1/login', [App\Http\Controllers\api\v1\AuthController::class, 'login'])->name('api.login');
-Route::apiResource('v1/bills', BillController::class);
-Route::apiResource('v1/properties', PropertyController::class);
-Route::apiResource('v1/users', UserController::class);
+Route::middleware(['auth:sanctum'])->group(function() {
+    Route::post('/v1/login', [App\Http\Controllers\api\v1\AuthController::class, 'login'])->name('api.login');
+
+    Route::post('/v1/logout', [App\Http\Controllers\api\v1\AuthController::class, 'logout'])->name('api.logout');
+
+    Route::apiResource('v1/bills', BillController::class);
+    Route::apiResource('v1/properties', PropertyController::class);
+    Route::apiResource('v1/users', UserController::class);
+
+});
